@@ -1,18 +1,5 @@
-const topPlatformProjectsData = [ 
-            { id: 2, namaProyek: 'Kopi Organik Desa Lestari', targetDana: 120000000, gambarProyek: 'https://placehold.co/80x80/0F2138/64FFDA?text=Kopi' },
-            { id: 4, namaProyek: 'MindWell App', targetDana: 180000000, gambarProyek: 'https://placehold.co/80x80/0F2138/64FFDA?text=Mind' },
-            { id: 8, namaProyek: 'EcoResidences Bali', targetDana: 1200000000, gambarProyek: 'https://placehold.co/80x80/0F2138/64FFDA?text=Bali' }
-        ];
-        const semuaProyekDataUntukWishlist = [ 
-            { id: 1, namaProyek: 'EduTech AI Masa Depan', gambarProyek: 'https://placehold.co/60x60/0F2138/64FFDA?text=Edu', kategori: 'Teknologi' },
-            { id: 2, namaProyek: 'Kopi Organik Desa Lestari', gambarProyek: 'https://placehold.co/60x60/0F2138/64FFDA?text=Kopi', kategori: 'Pertanian' },
-            { id: 3, namaProyek: 'Fashion Ramah Lingkungan', gambarProyek: 'https://placehold.co/60x60/0F2138/64FFDA?text=Eco', kategori: 'Fashion' },
-            { id: 4, namaProyek: 'Aplikasi Kesehatan Mental Terpadu', gambarProyek: 'https://placehold.co/60x60/0F2138/64FFDA?text=Mind', kategori: 'Kesehatan' },
-            { id: 5, namaProyek: 'Rumah Belajar Anak Pesisir', gambarProyek: 'https://placehold.co/60x60/0F2138/64FFDA?text=Edu2', kategori: 'Pendidikan' },
-            { id: 6, namaProyek: 'Energi Terbarukan Komunitas', gambarProyek: 'https://placehold.co/60x60/0F2138/64FFDA?text=Energi', kategori: 'Sosial' },
-            { id: 7, namaProyek: 'Startup Agrikultur Cerdas', gambarProyek: 'https://placehold.co/60x60/0F2138/64FFDA?text=Agro', kategori: 'Teknologi' },
-            { id: 8, namaProyek: 'Pengembangan Properti Hijau', gambarProyek: 'https://placehold.co/60x60/0F2138/64FFDA?text=Prop', kategori: 'Properti' }
-        ];
+const topPlatformProjectsData = [];
+        const semuaProyekDataUntukWishlist = [];
 
         function formatRupiah(angka) { return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(angka); }
         function getStatusBadgeClass(status) {
@@ -115,10 +102,8 @@ const topPlatformProjectsData = [
             if(logoutButtonSidebar) {
                 logoutButtonSidebar.addEventListener('click', function(e) {
                     e.preventDefault();
-                     ['isUserLoggedIn', 'loggedInUserName', 'userRole', 'demoUserEmail', 
-                         'demoUserPassword', 'demoUserUsername', 'notificationPreferences', 
-                         'myProjects', 'myInvestments', 'wishlistedProjects', 'userNotifications'].forEach(item => localStorage.removeItem(item));
-                    window.location.href = 'index.html';
+                                          ['isUserLoggedIn', 'loggedInUserName', 'userRole', 'demoUserEmail',
+                                              'demoUserPassword', 'demoUserUsername', 'notificationPreferences'].forEach(item => localStorage.removeItem(item));                    window.location.href = 'index.html';
                 });
             }
 

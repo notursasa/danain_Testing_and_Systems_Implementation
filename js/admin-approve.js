@@ -70,5 +70,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
+            function setupLogoutButton(buttonId) {
+                const logoutButton = document.getElementById(buttonId);
+                if (logoutButton) {
+                    logoutButton.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        localStorage.removeItem('isUserLoggedIn');
+                        localStorage.removeItem('loggedInUserName');
+                        localStorage.removeItem('userRole');
+                        window.location.href = 'index.html';
+                    });
+                }
+            }
+
+            setupLogoutButton('adminLogoutButton');
+
             loadPendingProjects();
         });

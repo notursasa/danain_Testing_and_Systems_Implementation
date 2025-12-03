@@ -1,7 +1,4 @@
-const demoProjects = [
-            { id: 1, projectName: 'EduTech AI (Demo)', projectDescription: 'Platform pembelajaran adaptif...', fundingTarget: 250000000, danaTerkumpul: 162500000, projectImageURL: 'https://placehold.co/600x400/173A5E/64FFDA?text=EduTech+AI', projectCategory: 'Teknologi', pemilikProyek: 'Tim Inovasi Edu', campaignDuration: 30, projectLocation: 'Jakarta', status: 'Pendanaan Aktif' },
-            { id: 2, projectName: 'Kopi Organik (Demo)', projectDescription: 'Memberdayakan petani lokal...', fundingTarget: 120000000, danaTerkumpul: 48000000, projectImageURL: 'https://placehold.co/600x400/173A5E/64FFDA?text=Kopi+Organik', projectCategory: 'Pertanian', pemilikProyek: 'Komunitas Desa Lestari', campaignDuration: 45, projectLocation: 'Bandung', status: 'Pendanaan Aktif' },
-        ];
+const demoProjects = [];
         let wishlistedProjects = JSON.parse(localStorage.getItem('wishlistedProjects')) || [];
 
         function formatRupiah(angka) { return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(angka); }

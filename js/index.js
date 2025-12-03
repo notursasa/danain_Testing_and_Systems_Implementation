@@ -1,9 +1,4 @@
-const demoFeaturedProjects = [
-            { id: 1, namaProyek: 'EduTech AI (Demo Unggulan)', deskripsiSingkat: 'Platform AI untuk belajar...', targetDana: 250000000, danaTerkumpul: 162500000, gambarProyek: 'https://placehold.co/600x400/173A5E/64FFDA?text=EduTech+AI', kategori: 'Teknologi', pemilikProyek: 'Tim Inovasi Edu', sisaHari: 30, lokasi: 'Jakarta', status: 'Pendanaan Aktif' },
-            { id: 2, namaProyek: 'Kopi Organik (Demo Unggulan)', deskripsiSingkat: 'Kopi berkualitas dari petani lokal...', targetDana: 120000000, danaTerkumpul: 48000000, gambarProyek: 'https://placehold.co/600x400/173A5E/64FFDA?text=Kopi+Organik', kategori: 'Pertanian', pemilikProyek: 'Komunitas Desa Lestari', sisaHari: 45, lokasi: 'Bandung', status: 'Pendanaan Aktif' },
-            { id: 3, namaProyek: 'Eco Fashion (Demo Unggulan)', deskripsiSingkat: 'Fashion berkelanjutan dan etis.', targetDana: 300000000, danaTerkumpul: 225000000, gambarProyek: 'https://placehold.co/600x400/173A5E/64FFDA?text=Eco+Fashion', kategori: 'Fashion', pemilikProyek: 'GreenStyle Co.', sisaHari: 60, lokasi: 'Surabaya', status: 'Terdanai' },
-            { id: 4, namaProyek: 'MindWell App (Demo Unggulan)', deskripsiSingkat: 'Akses mudah ke layanan kesehatan mental.', targetDana: 180000000, danaTerkumpul: 90000000, gambarProyek: 'https://placehold.co/600x400/173A5E/64FFDA?text=MindWell', kategori: 'Kesehatan', pemilikProyek: 'Sehat Jiwa ID', sisaHari: 25, lokasi: 'Yogyakarta', status: 'Pendanaan Aktif' }
-        ];
+const demoFeaturedProjects = [];
 
         function formatRupiah(angka) {
             return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(angka);

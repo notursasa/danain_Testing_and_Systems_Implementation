@@ -82,10 +82,8 @@ function formatRupiah(angka) { return new Intl.NumberFormat('id-ID', { style: 'c
             if(logoutButtonSidebar) {
                  logoutButtonSidebar.addEventListener('click', function(e) {
                     e.preventDefault();
-                     ['isUserLoggedIn', 'loggedInUserName', 'userRole', 'demoUserEmail', 
-                         'demoUserPassword', 'demoUserUsername', 'notificationPreferences', 
-                         'myProjects', 'myInvestments', 'wishlistedProjects', 'userNotifications'].forEach(item => localStorage.removeItem(item));
-                    window.location.href = 'index.html';
+                                          ['isUserLoggedIn', 'loggedInUserName', 'userRole', 'demoUserEmail',
+                                              'demoUserPassword', 'demoUserUsername', 'notificationPreferences'].forEach(item => localStorage.removeItem(item));                    window.location.href = 'index.html';
                 });
             }
 
