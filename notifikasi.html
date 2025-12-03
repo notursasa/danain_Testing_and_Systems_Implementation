@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifikasi - DANAIN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/notifikasi.css">
+</head>
+<body class="antialiased">
+    <header class="navbar-bg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-extrabold" style="color: #64FFDA;"> 
+                DANAIN
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="index.html#achievements" class="nav-link">Pencapaian</a>
+                <a href="index.html#how-it-works" class="nav-link">Cara Kerja</a>
+                <a href="daftar-proyek.html" class="nav-link">Telusuri Proyek</a>
+                <a href="index.html#faq" class="nav-link">FAQ</a>
+                <a href="tentang-kami.html" class="nav-link">Tentang Kami</a>
+                
+                <div id="navUserSectionDesktop" class="hidden items-center space-x-4"></div>
+                <div id="navAuthLinksDesktop" class="flex items-center space-x-4">
+                     <a href="auth.html#login" id="navLoginLinkDesktop" class="btn-secondary px-4 py-2 rounded-md text-sm">Masuk</a>
+                     <a href="auth.html#signup" id="navRegisterLinkDesktop" class="btn-primary px-4 py-2 rounded-md text-sm font-semibold">Daftar</a>
+                </div>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <i class="fas fa-bars text-2xl" style="color: #64FFDA;"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="md:hidden hidden bg-opacity-95 backdrop-blur-md" style="background-color: #0c1f3a;">
+            <a href="index.html#achievements" class="block px-6 py-3 nav-link hover:bg-gray-700">Pencapaian</a>
+            <a href="index.html#how-it-works" class="block px-6 py-3 nav-link hover:bg-gray-700">Cara Kerja</a>
+            <a href="daftar-proyek.html" class="block px-6 py-3 nav-link hover:bg-gray-700">Telusuri Proyek</a>
+            <a href="index.html#faq" class="block px-6 py-3 nav-link hover:bg-gray-700">FAQ</a>
+            <a href="tentang-kami.html" class="block px-6 py-3 nav-link hover:bg-gray-700">Tentang Kami</a>
+            
+            <div id="navUserSectionMobile" class="hidden border-t border-gray-700 pt-2"></div>
+            <div id="navAuthLinksMobile" class="border-t border-gray-700 pt-2">
+                <a href="auth.html#login" id="mobileNavLoginLink" class="block px-6 py-3 nav-link hover:bg-gray-700">Masuk</a>
+                <a href="auth.html#signup" id="mobileNavRegisterLink" class="block mx-4 my-2 px-6 py-3 btn-primary text-center rounded-md font-semibold">Daftar</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-16">
+        <div id="notificationsContent" class="opacity-0 transition-opacity duration-500 ease-in-out">
+            <div class="mb-8 md:mb-12 flex justify-between items-center">
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-100">Notifikasi Anda</h1>
+                    <p class="text-lg text-gray-400 mt-2">Semua pemberitahuan penting Anda ada di sini.</p>
+                </div>
+                <button id="markAllReadButton" class="btn-secondary px-4 py-2 text-sm rounded-md">Tandai Semua Dibaca</button>
+            </div>
+
+            <div id="notificationsListContainer" class="space-y-4">
+                <p id="loadingNotifications" class="text-center text-gray-400 py-10">Memuat notifikasi...</p>
+                </div>
+            <div id="noNotificationsMessage" class="hidden text-center py-10">
+                <i class="fas fa-bell-slash text-4xl text-gray-500 mb-4"></i>
+                <p class="text-xl text-gray-400">Tidak ada notifikasi untuk Anda saat ini.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-bg text-gray-400 py-12 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p>© <span id="currentYearFooter"></span> DANAIN. Semua Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="js/notifikasi.js"></script>
+</body>
+</html>

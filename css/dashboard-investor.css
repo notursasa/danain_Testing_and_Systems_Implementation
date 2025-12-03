@@ -1,0 +1,145 @@
+body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A192F;
+            color: #E0E6F1;
+        }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #0F2138; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb { background: #1E2D3D; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3E4C5B; }
+
+        .sidebar {
+            background-color: #0F2138;
+            border-right: 1px solid #1E2D3D;
+        }
+        .sidebar-link {
+            color: #A8B2D1;
+            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+        .sidebar-link:hover, .sidebar-link.active {
+            background-color: #1E2D3D;
+            color: #64FFDA;
+            border-left: 3px solid #64FFDA;
+            padding-left: calc(1.5rem - 3px);
+        }
+        .sidebar-link.active i { color: #64FFDA; }
+        .sidebar-link i { color: #A8B2D1; transition: color 0.2s ease; }
+        .sidebar-link:hover i { color: #64FFDA; }
+        
+        .btn-primary-accent {
+            background-color: #64FFDA;
+            color: #0A192F;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn-primary-accent:hover {
+            background-color: #52D3C8;
+            transform: translateY(-1px);
+        }
+        .category-filter-btn {
+            background-color: #102A43;
+            color: #A8B2D1;
+            border: 1px solid #1E2D3D;
+            transition: all 0.2s ease;
+            padding: 0.5rem 1rem; 
+            border-radius: 0.5rem; 
+            font-size: 0.875rem; 
+        }
+        .category-filter-btn:hover, .category-filter-btn.active {
+            background-color: rgba(100, 255, 218, 0.15); 
+            color: #64FFDA;
+            border-color: #64FFDA;
+            font-weight: 500;
+        }
+        .stat-card-investor {
+            background-color: #102A43;
+            border: 1px solid #1E2D3D;
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .section-card-investor {
+            background-color: #102A43;
+            border: 1px solid #1E2D3D;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .table-header-investor {
+            background-color: #0F2138;
+            color: #A8B2D1;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .table-row-investor { border-bottom: 1px solid #1E2D3D; }
+        .table-row-investor:last-child { border-bottom: none; }
+        .table-cell-investor {
+            color: #E0E6F1;
+            padding: 10px 12px;
+            font-size: 0.8rem;
+        }
+        .main-content-area {
+            height: 100vh; 
+            overflow-y: auto; 
+        }
+        .status-badge {
+            padding: 3px 8px;
+            border-radius: 9999px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            text-transform: capitalize;
+        }
+        .status-aktif { background-color: rgba(74, 222, 128, 0.2); color: #4ADE80; }
+        .status-terdanai { background-color: rgba(96, 165, 250, 0.2); color: #60A5FA; }
+        .status-selesai { background-color: rgba(56, 189, 248, 0.2); color: #38BDF8; }
+        .top-project-card { 
+            background-color: #0F2138;
+            border-radius: 8px;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: box-shadow 0.3s ease;
+        }
+        .top-project-card:hover {
+            box-shadow: 0 0 15px rgba(100, 255, 218, 0.1);
+        }
+        .top-project-card img {
+            width: 60px; 
+            height: 60px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+        .wishlist-item-card {
+            background-color: #0F2138;
+            border: 1px solid #1E2D3D;
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: box-shadow 0.3s ease;
+        }
+        .wishlist-item-card:hover {
+            box-shadow: 0 0 10px rgba(100, 255, 218, 0.08);
+        }
+        .btn-remove-wishlist {
+            background-color: rgba(239, 68, 68, 0.1);
+            color: #EF4444;
+            border: 1px solid #EF4444;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+        }
+        .btn-remove-wishlist:hover {
+            background-color: rgba(239, 68, 68, 0.2);
+        }
+        .notification-badge { 
+            background-color: #EF4444; 
+            color: white;
+            font-size: 0.7rem; 
+            font-weight: 600;
+            padding: 1px 5px; 
+            border-radius: 9999px; 
+            position: relative;
+            top: -2px; 
+        }

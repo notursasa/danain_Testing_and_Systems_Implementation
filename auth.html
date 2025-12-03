@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danain - Autentikasi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <div id="successNotification" class="success-notification">Pesan Sukses!</div>
+
+    <div class="auth-container" id="authContainer">
+        <a href="index.html" class="back-to-home-link">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+            </svg>
+            Kembali ke Beranda
+        </a>
+
+        <div class="logo-text">DANAIN</div>
+        
+        <h2 class="form-title" id="formTitle">Masuk ke Danain</h2>
+        
+        <div class="form-container">
+            <div class="form-slide" id="loginForm">
+                <form id="loginFormElement" novalidate>
+                    <div class="form-group">
+                        <input 
+                            type="text" 
+                            class="input-field" 
+                            placeholder="Username atau Email"
+                            required
+                            autocomplete="username"
+                            id="loginUser"
+                        >
+                        <div class="error-message"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input 
+                            type="password" 
+                            class="input-field" 
+                            placeholder="Kata Sandi"
+                            required
+                            autocomplete="current-password"
+                            id="loginPassword"
+                        >
+                        <div class="error-message"></div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <span>MASUK</span>
+                    </button>
+                </form>
+                
+                <div class="toggle-link">
+                    Belum punya akun? <a href="#signup" id="showSignup">Daftar Sekarang</a>
+                </div>
+            </div>
+
+            <div class="form-slide hidden" id="signupForm">
+                <form id="signupFormElement" novalidate>
+                    <div class="form-group">
+                        <input 
+                            type="text" 
+                            class="input-field" 
+                            placeholder="Nama Lengkap"
+                            required
+                            autocomplete="name"
+                            id="signupName"
+                        >
+                        <div class="error-message"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <input 
+                            type="text" 
+                            class="input-field" 
+                            placeholder="Username"
+                            required
+                            autocomplete="username"
+                            id="signupUsername"
+                        >
+                        <div class="error-message"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <input 
+                            type="email"
+                            class="input-field" 
+                            placeholder="Email"
+                            required
+                            autocomplete="email"
+                            id="signupEmail"
+                        >
+                        <div class="error-message"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input 
+                            type="password" 
+                            class="input-field" 
+                            placeholder="Kata Sandi (min. 6 karakter)"
+                            required
+                            autocomplete="new-password"
+                            id="signupPassword"
+                        >
+                        <div class="error-message"></div>
+                    </div>
+
+                    <div class="form-group role-selection">
+                        <label>Saya mendaftar sebagai:</label>
+                        <div class="role-options">
+                            <div>
+                                <input type="radio" id="roleStartup" name="userRole" value="startup" checked>
+                                <label for="roleStartup">Pengelola Proyek</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="roleInvestor" name="userRole" value="investor">
+                                <label for="roleInvestor">Investor</label>
+                            </div>
+                        </div>
+                        <div class="error-message" id="roleError"></div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <span>DAFTAR</span>
+                    </button>
+                </form>
+                
+                <div class="toggle-link">
+                    Sudah punya akun? <a href="#login" id="showLogin">Masuk di sini</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            &copy; <span id="currentYear"></span> Danain. Semua Hak Cipta Dilindungi.
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>

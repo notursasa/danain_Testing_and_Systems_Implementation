@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lihat Akun Demo - DANAIN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/lihat-akun-demo.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-2xl font-bold text-center">Data Akun Demo Tersimpan (localStorage)</h1>
+        
+        <div id="accountDataContainer">
+            <p class="text-center text-gray-400">Memuat data...</p>
+        </div>
+
+        <div class="warning">
+            <p><strong>PERINGATAN:</strong> Halaman ini hanya untuk tujuan pengembangan dan debugging prototipe. <strong>Jangan pernah</strong> menyimpan atau menampilkan password pengguna dalam bentuk teks biasa di aplikasi nyata. Password harus selalu di-hash.</p>
+        </div>
+
+        <div class="mt-8 text-center">
+            <button id="clearLocalStorageButton" class="btn-clear">Hapus Semua Data Akun Demo dari localStorage</button>
+        </div>
+         <div class="mt-4 text-center">
+            <a href="index.html" class="text-blue-400 hover:underline">&larr; Kembali ke Beranda</a>
+        </div>
+    </div>
+
+    <script src="js/lihat-akun-demo.js"></script>
+</body>
+</html>

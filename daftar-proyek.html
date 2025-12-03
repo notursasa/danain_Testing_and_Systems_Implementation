@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DANAIN - Telusuri Proyek</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/daftar-proyek.css">
+</head>
+<body class="antialiased">
+    <div id="saveProjectCardPopup" class="success-popup-small">Status proyek disimpan!</div>
+
+    <header class="navbar-bg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-extrabold" style="color: #64FFDA;"> 
+                DANAIN
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="index.html#achievements" class="nav-link">Pencapaian</a>
+                <a href="index.html#how-it-works" class="nav-link">Cara Kerja</a>
+                <a href="daftar-proyek.html" class="nav-link active">Telusuri Proyek</a>
+                <a href="index.html#faq" class="nav-link">FAQ</a>
+                <a href="tentang-kami.html" class="nav-link">Tentang Kami</a>
+                
+                <div id="navUserSectionDesktop" class="hidden items-center space-x-4"></div>
+                <div id="navAuthLinksDesktop" class="flex items-center space-x-4">
+                     <a href="auth.html#login" id="navLoginLinkDesktop" class="btn-secondary px-4 py-2 rounded-md text-sm">Masuk</a>
+                     <a href="auth.html#signup" id="navRegisterLinkDesktop" class="btn-primary px-4 py-2 rounded-md text-sm font-semibold">Daftar</a>
+                </div>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <i class="fas fa-bars text-2xl" style="color: #64FFDA;"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="md:hidden hidden bg-opacity-95 backdrop-blur-md" style="background-color: #0c1f3a;">
+            <a href="index.html#achievements" class="block px-6 py-3 nav-link hover:bg-gray-700">Pencapaian</a>
+            <a href="index.html#how-it-works" class="block px-6 py-3 nav-link hover:bg-gray-700">Cara Kerja</a>
+            <a href="daftar-proyek.html" class="block px-6 py-3 nav-link active bg-gray-700">Telusuri Proyek</a>
+            <a href="index.html#faq" class="block px-6 py-3 nav-link hover:bg-gray-700">FAQ</a>
+            <a href="tentang-kami.html" class="block px-6 py-3 nav-link hover:bg-gray-700">Tentang Kami</a>
+            
+            <div id="navUserSectionMobile" class="hidden border-t border-gray-700 pt-2"></div>
+            <div id="navAuthLinksMobile" class="border-t border-gray-700 pt-2">
+                <a href="auth.html#login" id="mobileNavLoginLink" class="block px-6 py-3 nav-link hover:bg-gray-700">Masuk</a>
+                <a href="auth.html#signup" id="mobileNavRegisterLink" class="block mx-4 my-2 px-6 py-3 btn-primary text-center rounded-md font-semibold">Daftar</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-16">
+        <h1 class="text-3xl md:text-4xl font-bold text-center text-gray-100 mb-12">Telusuri Proyek Inovatif</h1>
+        <section class="filter-section mb-8 md:mb-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
+                <div>
+                    <label for="filterKategori" class="block text-sm font-medium mb-1">Kategori</label>
+                    <select id="filterKategori" name="kategori" class="w-full"><option value="">Semua Kategori</option><option value="Teknologi">Teknologi</option><option value="Pendidikan">Pendidikan</option><option value="Pertanian">Pertanian</option><option value="Fashion">Fashion</option><option value="Kesehatan">Kesehatan</option><option value="Sosial">Sosial</option><option value="Properti">Properti</option></select>
+                </div>
+                <div><label for="filterLokasi" class="block text-sm font-medium mb-1">Lokasi</label><input type="text" id="filterLokasi" name="lokasi" placeholder="Contoh: Jakarta" class="w-full"></div>
+                <div><label for="filterUrutkan" class="block text-sm font-medium mb-1">Urutkan</label><select id="filterUrutkan" name="urutkan" class="w-full"><option value="terbaru">Terbaru</option><option value="dana_terkumpul">Dana Terkumpul</option><option value="target_dana">Target Dana</option><option value="sisa_hari">Sisa Hari</option></select></div>
+                <button id="terapkanFilter" class="btn-primary py-2 px-4 rounded-md text-sm font-semibold h-10">Terapkan Filter</button>
+            </div>
+        </section>
+        <section id="project-list-container" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <p id="loadingMessage" class="text-center col-span-full text-gray-400">Memuat proyek...</p>
+        </section>
+         <div id="noResultsMessage" class="hidden text-center col-span-full text-gray-400 mt-10"><i class="fas fa-folder-open text-4xl mb-4"></i><p>Oops! Tidak ada proyek yang sesuai dengan filter Anda atau belum ada proyek yang tersedia.</p></div>
+    </main>
+
+    <footer class="footer-bg text-gray-400 py-12 mt-16">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-extrabold mb-4" style="color: #64FFDA;">DANAIN</h3>
+                    <p class="text-sm">Menghubungkan inovasi dengan investasi untuk masa depan yang lebih baik dan berdampak.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-200 mb-4">Perusahaan</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="tentang-kami.html" class="nav-link">Tentang Kami</a></li>
+                        <li><a href="#" class="nav-link">Karir</a></li>
+                        <li><a href="#" class="nav-link">Blog</a></li>
+                        <li><a href="#" class="nav-link">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-200 mb-4">Legal & Bantuan</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="syarat-ketentuan.html" class="nav-link">Syarat & Ketentuan</a></li>
+                        <li><a href="kebijakan-privasi.html" class="nav-link">Kebijakan Privasi</a></li>
+                        <li><a href="#faq" class="nav-link">Pusat Bantuan (FAQ)</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-200 mb-4">Ikuti Kami</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t pt-8 text-center text-sm" style="border-color: #1E2D3D;">
+                <p>© <span id="currentYear"></span> DANAIN. Semua Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/daftar-proyek.js"></script>
+
+</body>
+</html>

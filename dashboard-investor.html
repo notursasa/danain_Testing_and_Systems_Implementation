@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Investor - DANAIN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/dashboard-investor.css">
+</head>
+<body class="flex antialiased">
+
+    <aside class="sidebar w-64 min-h-screen flex-shrink-0 flex flex-col fixed top-0 left-0 z-40 lg:relative lg:translate-x-0 transform -translate-x-full lg:transition-none transition-transform duration-300 ease-in-out" id="sidebar">
+        <div class="h-20 flex items-center justify-center px-6 border-b border-gray-700">
+            <a href="index.html" class="text-3xl font-extrabold" style="color: #64FFDA;">DANAIN</a>
+        </div>
+        <nav class="flex-grow pt-6">
+            <a href="dashboard-investor.html" class="sidebar-link active flex items-center space-x-3 px-6 py-3">
+                <i class="fas fa-tachometer-alt w-5 h-5"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#investasi-saya-section" class="sidebar-link flex items-center space-x-3 px-6 py-3">
+                <i class="fas fa-wallet w-5 h-5"></i>
+                <span>Investasi Saya</span>
+            </a>
+            <a href="#proyek-disimpan-section" class="sidebar-link flex items-center space-x-3 px-6 py-3">
+                <i class="fas fa-bookmark w-5 h-5"></i>
+                <span>Proyek Disimpan</span>
+            </a>
+            <a href="contact-creator-placeholder.html" class="sidebar-link flex items-center space-x-3 px-6 py-3">
+                <i class="fas fa-headset w-5 h-5"></i>
+                <span>Hubungi Kreator</span>
+            </a>
+            <a href="pengaturan-akun.html" class="sidebar-link flex items-center space-x-3 px-6 py-3">
+                <i class="fas fa-cog w-5 h-5"></i>
+                <span>Pengaturan Akun</span>
+            </a>
+            <a href="edit-profil.html" class="sidebar-link flex items-center space-x-3 px-6 py-3">
+                <i class="fas fa-user-edit w-5 h-5"></i>
+                <span>Edit Profil</span>
+            </a>
+            <a href="notifikasi.html" id="sidebarNotifLinkInvestor" class="sidebar-link flex items-center justify-between px-6 py-3">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-bell w-5 h-5"></i>
+                    <span>Notifikasi</span>
+                </div>
+                 <span id="sidebarNotificationBadgeInvestor" class="notification-badge hidden">0</span>
+            </a>
+        </nav>
+        <div class="px-6 py-4 border-t border-gray-700 mt-auto">
+            <a href="daftar-proyek.html" class="btn-primary-accent w-full flex items-center justify-center py-2.5 rounded-lg font-semibold text-sm mb-4">
+                <i class="fas fa-search-dollar mr-2"></i>Cari Proyek
+            </a>
+            <div class="flex items-center space-x-3 pt-2">
+                <img id="userAvatarSidebar" src="https://placehold.co/40x40/0A192F/64FFDA?text=I" alt="Avatar Investor" class="w-10 h-10 rounded-full border-2 border-gray-600">
+                <div>
+                    <p id="userNameSidebar" class="text-sm font-semibold text-gray-200">Nama Investor</p>
+                    <a href="#" id="logoutButtonSidebar" class="text-xs text-gray-500 hover:text-red-400 transition-colors">Logout</a>
+                </div>
+            </div>
+        </div>
+    </aside>
+    
+    <button id="sidebarToggle" class="lg:hidden fixed top-5 left-5 z-50 p-2 rounded-md bg-gray-800 text-white">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="flex-1 flex flex-col main-content-area">
+        <main class="flex-grow p-6 md:p-8 lg:p-10">
+            <div id="dashboardContentInvestor" class="opacity-0 transition-opacity duration-500 ease-in-out">
+                <h1 id="welcomeMessageInvestor" class="text-3xl md:text-4xl font-bold text-gray-100 mb-6">Welcome Back, Name!</h1>
+                <section class="mb-8 flex flex-wrap gap-3 items-center" id="categoryFilters">
+                    <button data-kategori="Semua" class="category-filter-btn active">Semua</button>
+                    <button data-kategori="Kesehatan" class="category-filter-btn">Kesehatan</button>
+                    <button data-kategori="Olahraga" class="category-filter-btn">Olahraga</button>
+                    <button data-kategori="Teknologi" class="category-filter-btn">Teknologi</button>
+                    <button data-kategori="Pendidikan" class="category-filter-btn">Pendidikan</button>
+                    <a href="daftar-proyek.html" class="text-sm text-gray-400 hover:text-gray-200 ml-auto">lihat semua <i class="fas fa-arrow-right text-xs"></i></a>
+                </section>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="lg:col-span-2 space-y-6">
+                        <section class="section-card-investor">
+                            <h2 class="text-xl font-semibold text-gray-100 mb-4">Ringkasan Kinerja Investasi</h2>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                <div class="text-center p-4 bg-gray-800 rounded-lg"><p class="text-sm text-gray-400">Total Dana Diinvestasikan</p><p id="totalInvestmentAmount" class="text-2xl font-bold text-green-400 mt-1">Rp 0</p></div>
+                                <div class="text-center p-4 bg-gray-800 rounded-lg"><p class="text-sm text-gray-400">Proyek Diinvestasikan</p><p id="totalInvestedProjectsSummary" class="text-2xl font-bold text-blue-400 mt-1">0</p></div>
+                                <div class="text-center p-4 bg-gray-800 rounded-lg"><p class="text-sm text-gray-400">Estimasi Keuntungan</p><p class="text-2xl font-bold text-yellow-400 mt-1">Rp 0 <span class="text-xs">(Simulasi)</span></p></div>
+                            </div>
+                             <p class="text-xs text-gray-500 mt-4 text-center">*Data kinerja adalah simulasi.</p>
+                        </section>
+                        <section class="section-card-investor" id="investasi-saya-section">
+                            <h2 class="text-xl font-semibold text-gray-100 mb-4">Investasi Saya</h2>
+                            <div class="overflow-x-auto"><table class="min-w-full"><thead class="table-header-investor"><tr><th class="table-cell-investor text-left">Nama Proyek</th><th class="table-cell-investor text-right">Jumlah Investasi</th><th class="table-cell-investor text-left">Status Proyek</th><th class="table-cell-investor text-left">Tanggal Investasi</th><th class="table-cell-investor text-center">Aksi</th></tr></thead><tbody id="myInvestmentsTableBody"><tr><td colspan="5" id="loadingMyInvestments" class="table-cell-investor text-center text-gray-400 py-8">Memuat...</td></tr></tbody></table></div>
+                            <div id="noMyInvestments" class="hidden text-center text-gray-400 py-8 px-5"><i class="fas fa-search-dollar text-3xl mb-3"></i><p>Anda belum berinvestasi. <a href="daftar-proyek.html" class="text-blue-400 hover:underline">Cari proyek!</a></p></div>
+                        </section>
+                        
+                        <section class="section-card-investor" id="proyek-disimpan-section">
+                            <h2 class="text-xl font-semibold text-gray-100 mb-4">Proyek Disimpan (Wishlist)</h2>
+                            <div id="wishlistedProjectsContainer" class="space-y-4">
+                                <p id="loadingWishlist" class="text-gray-400">Memuat proyek disimpan...</p>
+                            </div>
+                            <div id="noWishlistedProjects" class="hidden text-center text-gray-400 py-8">
+                                <i class="far fa-bookmark text-3xl mb-3"></i>
+                                <p>Anda belum menyimpan proyek. <a href="daftar-proyek.html" class="text-blue-400 hover:underline">Telusuri proyek!</a></p>
+                            </div>
+                        </section>
+                    </div>
+                    <aside class="lg:col-span-1 space-y-6">
+                        <div class="stat-card-investor"><div class="flex justify-between items-start"><div><p class="text-sm text-gray-400 uppercase tracking-wider">Total Proyek Diinvestasikan</p><p id="statTotalInvested" class="text-3xl font-bold text-gray-100 mt-1">0</p></div><div class="p-2.5 rounded-lg bg-gray-700"><i class="fas fa-donate text-xl text-blue-400"></i></div></div><p id="statTotalInvestedChange" class="text-xs text-gray-500 mt-3">+0 vs bulan lalu</p></div>
+                        <div class="stat-card-investor"><div class="flex justify-between items-start"><div><p class="text-sm text-gray-400 uppercase tracking-wider">Rata-Rata Progres Dana Proyek</p><p id="statAvgFundProgress" class="text-3xl font-bold text-gray-100 mt-1">0%</p></div><div class="p-2.5 rounded-lg bg-gray-700"><i class="fas fa-percent text-xl text-green-400"></i></div></div><p id="statAvgFundProgressChange" class="text-xs text-gray-500 mt-3">+0.0% vs bulan lalu</p></div>
+                        <div class="section-card-investor"><h3 class="text-lg font-semibold text-gray-100 mb-3">Proyek Unggulan</h3><div id="topProjectsListInvestor" class="space-y-3"><p class="text-gray-400 text-sm">Memuat...</p></div></div>
+                    </aside>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/dashboard-investor.js"></script>
+</body>
+</html>

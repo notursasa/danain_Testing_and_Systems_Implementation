@@ -1,0 +1,86 @@
+body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A192F;
+            color: #E0E6F1;
+            padding: 20px;
+        }
+        .container {
+            background-color: #102A43;
+            border: 1px solid #1E2D3D;
+            border-radius: 8px;
+            padding: 24px;
+            max-width: 900px; 
+            margin: 40px auto;
+        }
+        h1 {
+            color: #64FFDA;
+            border-bottom: 1px solid #1E2D3D;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .project-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .project-table th, .project-table td {
+            border: 1px solid #1E2D3D;
+            padding: 10px 12px;
+            text-align: left;
+            font-size: 0.875rem;
+        }
+        .project-table th {
+            background-color: #0F2138;
+            color: #A8B2D1;
+            font-weight: 600;
+        }
+        .project-table td {
+            background-color: #102A43;
+        }
+        .project-table tr:nth-child(even) td {
+            background-color: #0F2138;
+        }
+        .btn-approve {
+            background-color: #4ADE80; 
+            color: #0A192F;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.8rem;
+            transition: background-color 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-approve:hover {
+            background-color: #36B37E;
+        }
+        .btn-reject { 
+            background-color: #EF4444; 
+            color: white;
+             padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.8rem;
+            transition: background-color 0.2s ease;
+            border: none;
+            cursor: pointer;
+            margin-left: 8px;
+        }
+        .btn-reject:hover {
+            background-color: #DC2626;
+        }
+        .status-review { 
+            background-color: rgba(251, 191, 36, 0.2); color: #FBBF24; 
+            padding: 3px 8px; border-radius: 9999px; font-size: 0.7rem; font-weight: 500;
+        }
+        .success-message {
+            background-color: rgba(74, 222, 128, 0.1);
+            border: 1px solid #4ADE80;
+            color: #4ADE80;
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }

@@ -1,0 +1,86 @@
+body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A192F;
+            color: #E0E6F1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #102A43;
+            border: 1px solid #1E2D3D;
+            border-radius: 8px;
+            padding: 24px;
+            max-width: 700px; 
+            width: 100%;
+            margin: 40px auto;
+        }
+        h1 {
+            color: #64FFDA;
+            border-bottom: 1px solid #1E2D3D;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 0.9rem;
+        }
+        .btn-add {
+            background-color: #64FFDA;
+            color: #0A192F;
+        }
+        .btn-add:hover {
+            background-color: #52D3C8;
+            transform: translateY(-1px);
+        }
+        .btn-clear {
+            background-color: #EF4444; 
+            color: white;
+            margin-top: 15px;
+        }
+        .btn-clear:hover {
+            background-color: #DC2626;
+            transform: translateY(-1px);
+        }
+        .btn-clear-all-localstorage {
+             background-color: #f59e0b; 
+            color: #0A192F;
+            margin-top: 15px;
+        }
+        .btn-clear-all-localstorage:hover {
+            background-color: #d97706;
+            transform: translateY(-1px);
+        }
+        .status-message {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .status-success {
+            background-color: rgba(74, 222, 128, 0.1);
+            border: 1px solid #4ADE80;
+            color: #4ADE80;
+        }
+        .status-info {
+            background-color: rgba(96, 165, 250, 0.1);
+            border: 1px solid #60A5FA;
+            color: #60A5FA;
+        }
+        .project-list-item {
+            background-color: #0F2138;
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            border-left: 3px solid #64FFDA;
+            font-size: 0.85rem;
+        }

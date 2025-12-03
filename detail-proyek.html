@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Proyek - DANAIN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/detail-proyek.css">
+</head>
+<body class="antialiased">
+    <div id="successInvestmentPopup" class="success-popup">Investasi berhasil dicatat!</div>
+    <div id="successSaveProjectPopup" class="success-popup">Proyek disimpan!</div>
+
+
+    <div id="investmentModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-semibold text-gray-100">Investasi pada Proyek</h3>
+                <button id="closeInvestmentModal" class="text-gray-400 hover:text-gray-200">×</button>
+            </div>
+            <p class="text-sm text-gray-300 mb-2">Anda akan berinvestasi pada proyek:</p>
+            <h4 id="modalProjectName" class="text-lg font-semibold text-gray-100 mb-4">Nama Proyek Tampil Di Sini</h4>
+            <form id="investmentForm" novalidate>
+                <div class="mb-4">
+                    <label for="investmentAmount" class="form-label-modal">Jumlah Investasi (IDR) <span class="text-red-500">*</span></label>
+                    <input type="number" id="investmentAmount" name="investmentAmount" class="form-input-modal" placeholder="Contoh: 5000000" required min="100000">
+                    <p id="investmentAmountError" class="error-message-modal">Jumlah investasi tidak valid.</p>
+                </div>
+                <div class="mb-6">
+                    <label class="flex items-center text-sm text-gray-400">
+                        <input type="checkbox" id="confirmTerms" name="confirmTerms" class="mr-2 bg-gray-700 border-gray-600 text-green-400 focus:ring-green-500" required>
+                        Saya telah membaca dan menyetujui <a href="#" class="text-blue-400 hover:underline ml-1">syarat & ketentuan investasi</a>.
+                    </label>
+                     <p id="confirmTermsError" class="error-message-modal">Anda harus menyetujui syarat & ketentuan.</p>
+                </div>
+                <div class="flex justify-end gap-4">
+                    <button type="button" id="cancelInvestmentButton" class="btn-secondary px-6 py-2 rounded-md text-sm">Batal</button>
+                    <button type="submit" class="btn-primary px-6 py-2 rounded-md text-sm">Konfirmasi Investasi</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <header class="navbar-bg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-extrabold" style="color: #64FFDA;"> 
+                DANAIN
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="index.html#achievements" class="nav-link">Pencapaian</a>
+                <a href="index.html#how-it-works" class="nav-link">Cara Kerja</a>
+                <a href="daftar-proyek.html" class="nav-link">Telusuri Proyek</a>
+                <a href="index.html#faq" class="nav-link">FAQ</a>
+                <a href="tentang-kami.html" class="nav-link">Tentang Kami</a>
+                
+                <div id="navUserSectionDesktop" class="hidden items-center space-x-4"></div>
+                <div id="navAuthLinksDesktop" class="flex items-center space-x-4">
+                     <a href="auth.html#login" id="navLoginLinkDesktop" class="btn-secondary px-4 py-2 rounded-md text-sm">Masuk</a>
+                     <a href="auth.html#signup" id="navRegisterLinkDesktop" class="btn-primary px-4 py-2 rounded-md text-sm font-semibold">Daftar</a>
+                </div>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <i class="fas fa-bars text-2xl" style="color: #64FFDA;"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="md:hidden hidden bg-opacity-95 backdrop-blur-md" style="background-color: #0c1f3a;">
+            <a href="index.html#achievements" class="block px-6 py-3 nav-link hover:bg-gray-700">Pencapaian</a>
+            <a href="index.html#how-it-works" class="block px-6 py-3 nav-link hover:bg-gray-700">Cara Kerja</a>
+            <a href="daftar-proyek.html" class="block px-6 py-3 nav-link hover:bg-gray-700">Telusuri Proyek</a>
+            <a href="index.html#faq" class="block px-6 py-3 nav-link hover:bg-gray-700">FAQ</a>
+            <a href="tentang-kami.html" class="block px-6 py-3 nav-link hover:bg-gray-700">Tentang Kami</a>
+            
+            <div id="navUserSectionMobile" class="hidden border-t border-gray-700 pt-2"></div>
+            <div id="navAuthLinksMobile" class="border-t border-gray-700 pt-2">
+                <a href="auth.html#login" id="mobileNavLoginLink" class="block px-6 py-3 nav-link hover:bg-gray-700">Masuk</a>
+                <a href="auth.html#signup" id="mobileNavRegisterLink" class="block mx-4 my-2 px-6 py-3 btn-primary text-center rounded-md font-semibold">Daftar</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-16">
+        <div id="projectDetailContainer" class="opacity-0 transition-opacity duration-500 ease-in-out">
+            <nav class="text-sm mb-6 text-gray-400">
+                <a href="index.html" class="hover:text-gray-200">Beranda</a> > 
+                <a href="daftar-proyek.html" class="hover:text-gray-200">Telusuri Proyek</a> > 
+                <span id="breadcrumbProjectName" class="text-gray-200">Nama Proyek</span>
+            </nav>
+            <div class="lg:flex lg:gap-8">
+                <div class="lg:w-2/3">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h1 id="projectTitle" class="text-3xl md:text-4xl font-bold text-gray-100 mb-1">Memuat Nama Proyek...</h1>
+                            <p id="projectCategory" class="text-lg text-gray-400 mb-1">Kategori</p>
+                        </div>
+                        <button id="saveProjectButton" class="btn-outline-accent px-4 py-2 rounded-md text-sm font-semibold inline-flex items-center self-start">
+                            <i class="far fa-bookmark mr-2"></i>
+                            <span>Simpan Proyek</span>
+                        </button>
+                    </div>
+                    <p id="projectTagline" class="text-xl text-gray-300 mb-6">Tagline proyek...</p>
+                    <div id="projectMediaContainer" class="mb-8">
+                        <img id="projectImage" src="https://placehold.co/800x450/102A43/1E2D3D?text=Memuat+Gambar..." alt="Gambar Proyek" class="w-full rounded-lg shadow-lg">
+                        <div id="projectVideo" class="hidden youtube-embed-container"></div>
+                    </div>
+                    <div class="border-b border-gray-700 mb-6">
+                        <nav class="flex space-x-4" id="tabNav">
+                            <button data-tab="deskripsi" class="tab-button active">Deskripsi</button>
+                            <button data-tab="update" class="tab-button">Update</button>
+                            <button data-tab="dokumen" class="tab-button">Dokumen</button>
+                            <button data-tab="risiko" class="tab-button">Risiko & Tantangan</button>
+                        </nav>
+                    </div>
+                    <div id="tabContentContainer">
+                        <div id="deskripsiContent" class="tab-content active"><h2 class="text-2xl font-semibold text-gray-200 mb-3">Tentang Proyek Ini</h2><p id="projectDescription" class="text-gray-300 leading-relaxed whitespace-pre-line">Memuat...</p></div>
+                        <div id="updateContent" class="tab-content"><h2 class="text-2xl font-semibold text-gray-200 mb-3">Perkembangan Proyek</h2><div id="projectUpdatesList" class="space-y-4">Memuat update...</div></div>
+                        <div id="dokumenContent" class="tab-content"><h2 class="text-2xl font-semibold text-gray-200 mb-3">Dokumen Proyek</h2><ul id="projectDocumentsList" class="list-disc list-inside text-gray-300 space-y-2">Memuat...</ul></div>
+                        <div id="risikoContent" class="tab-content"><h2 class="text-2xl font-semibold text-gray-200 mb-3">Risiko & Tantangan</h2><p id="projectRisks" class="text-gray-300 leading-relaxed whitespace-pre-line">Memuat...</p></div>
+                    </div>
+                </div>
+                <div class="lg:w-1/3 mt-10 lg:mt-0">
+                    <div class="section-card sticky top-24"> 
+                        <h2 class="text-xl font-semibold text-gray-200 mb-4">Progres Pendanaan</h2>
+                        <div class="mb-1"><span id="danaTerkumpul" class="text-2xl font-bold text-gray-100">Rp 0</span><span class="text-gray-400 text-sm"> dari <span id="targetDana">Rp 0</span></span></div>
+                        <div class="w-full progress-bar-bg rounded-full h-3 mb-1"><div id="progressBar" class="progress-bar-fill h-3 rounded-full" style="width: 0%;"></div></div>
+                        <div class="flex justify-between text-sm text-gray-400 mb-4"><span id="persentaseTerkumpul">0% terkumpul</span><span id="sisaHari">0 hari lagi</span></div>
+                        <button id="investButton" class="btn-primary w-full py-3 text-lg font-semibold mb-4"><i class="fas fa-rocket mr-2"></i>Investasi Sekarang</button>
+                        <h3 class="text-lg font-semibold text-gray-200 mt-6 mb-2">Skema untuk Investor</h3><p id="skemaInvestasi" class="text-sm text-gray-400 mb-6">...</p>
+                        <hr class="border-gray-700 my-6">
+                        <h3 class="text-lg font-semibold text-gray-200 mb-3">Pengelola Proyek</h3>
+                        <div class="flex items-center mb-4">
+                            <img id="pemilikAvatar" src="https://placehold.co/60x60/0A192F/1E2D3D?text=P" alt="Avatar Pemilik" class="w-12 h-12 rounded-full mr-4">
+                            <div><p id="pemilikNama" class="font-semibold text-gray-100">Nama Pemilik</p><a id="pemilikWebsite" href="#" target="_blank" rel="noopener noreferrer" class="text-sm text-blue-400 hover:text-blue-300 hidden">Kunjungi Website</a></div>
+                        </div>
+                        <p id="pemilikProfil" class="text-sm text-gray-400 mb-4">...</p>
+                        <button id="contactButton" class="btn-secondary w-full py-2.5 text-sm"><i class="fas fa-envelope mr-2"></i> Hubungi Pengelola Proyek</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="projectNotFound" class="hidden text-center py-20">
+            <i class="fas fa-exclamation-circle text-5xl text-red-500 mb-4"></i>
+            <h2 class="text-3xl font-bold text-gray-100 mb-2">Proyek Tidak Ditemukan</h2>
+            <p class="text-gray-400 mb-6">Maaf, proyek yang Anda cari tidak dapat ditemukan.</p>
+            <a href="daftar-proyek.html" class="btn-primary px-6 py-3">Kembali ke Daftar Proyek</a>
+        </div>
+    </main>
+
+    <footer class="footer-bg text-gray-400 py-12 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p>© <span id="currentYearFooter"></span> DANAIN. Semua Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="js/detail-proyek.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - DANAIN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/tentang-kami.css">
+</head>
+<body class="antialiased">
+
+    <header class="navbar-bg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-extrabold" style="color: #64FFDA;"> 
+                DANAIN
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="index.html#achievements" class="nav-link">Pencapaian</a>
+                <a href="index.html#how-it-works" class="nav-link">Cara Kerja</a>
+                <a href="daftar-proyek.html" class="nav-link">Telusuri Proyek</a>
+                <a href="index.html#faq" class="nav-link">FAQ</a>
+                <a href="tentang-kami.html" class="nav-link active">Tentang Kami</a>
+                
+                <div id="navUserSectionDesktop" class="hidden items-center space-x-4"></div>
+                <div id="navAuthLinksDesktop" class="flex items-center space-x-4">
+                     <a href="auth.html#login" id="navLoginLinkDesktop" class="btn-secondary px-4 py-2 rounded-md text-sm">Masuk</a>
+                     <a href="auth.html#signup" id="navRegisterLinkDesktop" class="btn-primary px-4 py-2 rounded-md text-sm font-semibold">Daftar</a>
+                </div>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <i class="fas fa-bars text-2xl" style="color: #64FFDA;"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="md:hidden hidden bg-opacity-95 backdrop-blur-md" style="background-color: #0c1f3a;">
+            <a href="index.html#achievements" class="block px-6 py-3 nav-link hover:bg-gray-700">Pencapaian</a>
+            <a href="index.html#how-it-works" class="block px-6 py-3 nav-link hover:bg-gray-700">Cara Kerja</a>
+            <a href="daftar-proyek.html" class="block px-6 py-3 nav-link hover:bg-gray-700">Telusuri Proyek</a>
+            <a href="index.html#faq" class="block px-6 py-3 nav-link hover:bg-gray-700">FAQ</a>
+            <a href="tentang-kami.html" class="block px-6 py-3 nav-link active bg-gray-700">Tentang Kami</a>
+            
+            <div id="navUserSectionMobile" class="hidden border-t border-gray-700 pt-2"></div>
+            <div id="navAuthLinksMobile" class="border-t border-gray-700 pt-2">
+                <a href="auth.html#login" id="mobileNavLoginLink" class="block px-6 py-3 nav-link hover:bg-gray-700">Masuk</a>
+                <a href="auth.html#signup" id="mobileNavRegisterLink" class="block mx-4 my-2 px-6 py-3 btn-primary text-center rounded-md font-semibold">Daftar</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-about py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Tentang DANAIN</h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+                    Menjembatani inovasi dengan investasi untuk masa depan yang lebih cerah dan inklusif.
+                </p>
+            </div>
+        </section>
+
+        <div class="container mx-auto px-6 py-12 md:py-16">
+            <section class="content-section">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-100 mb-4">Visi Kami</h2>
+                        <p class="text-gray-300 leading-relaxed mb-6">
+                            Menjadi platform pendanaan terdepan yang memberdayakan setiap individu dan startup inovatif untuk mewujudkan potensi penuh mereka, menciptakan ekosistem investasi yang transparan, adil, dan berdampak positif bagi kemajuan ekonomi Indonesia.
+                        </p>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-100 mb-4">Misi Kami</h2>
+                        <ul class="list-disc list-inside text-gray-300 space-y-2 leading-relaxed">
+                            <li>Menyediakan akses pendanaan yang mudah dan cepat bagi startup dan proyek inovatif.</li>
+                            <li>Menghubungkan investor dengan peluang investasi yang relevan dan potensial.</li>
+                            <li>Membangun komunitas yang kolaboratif antara pencari dana dan pemberi dana.</li>
+                            <li>Mengedepankan transparansi, akuntabilitas, dan keamanan dalam setiap transaksi.</li>
+                            <li>Mendorong pertumbuhan ekonomi kreatif dan usaha kecil menengah di Indonesia.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="text-3xl font-bold text-gray-100 mb-6 text-center">Cerita di Balik DANAIN</h2>
+                <div class="max-w-3xl mx-auto text-gray-300 leading-relaxed space-y-4">
+                    <p>
+                        DANAIN lahir dari sebuah pengamatan sederhana: banyak ide brilian dan proyek inovatif, terutama dari kalangan mahasiswa dan masyarakat kelas bawah, seringkali terhenti langkahnya karena keterbatasan akses terhadap pendanaan. Di sisi lain, banyak calon investor yang memiliki keinginan untuk berkontribusi namun kesulitan menemukan platform yang tepat untuk menyalurkan dukungannya kepada usaha-usaha rintisan.
+                    </p>
+                    <p>
+                        Permasalahan dalam memperoleh investasi menjadi tantangan utama. Proses pengajuan di lembaga keuangan formal seringkali rumit dan mensyaratkan rekam jejak yang belum dimiliki oleh para pemula. Akibatnya, potensi besar gagal berkembang bukan karena kurangnya kreativitas, melainkan karena terbatasnya modal.
+                    </p>
+                    <p>
+                        Terinspirasi dari model pendanaan sukses seperti Shark Tank, Dragon's Den, serta platform berbasis komunitas seperti Trakteer dan Gank.me, kami bercita-cita menciptakan sebuah jembatan digital. DANAIN dirancang untuk mempertemukan para inovator dengan investor secara langsung, dengan proses yang lebih mudah diakses, transparan, dan fleksibel.
+                    </p>
+                    <p>
+                        Kami percaya bahwa setiap ide berharga layak mendapatkan kesempatan. Dengan DANAIN, kami berharap dapat membangun ekosistem investasi yang lebih inklusif, di mana setiap orang dapat berpartisipasi dalam mendorong kemajuan dan menciptakan dampak positif.
+                    </p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="text-3xl font-bold text-gray-100 mb-8 text-center">Tim Kami</h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-center">
+                    <div class="team-member-card">
+                        <img src="https://placehold.co/200x200/0A192F/64FFDA?text=ARA" alt="Foto Aisyah Raissa Algebra">
+                        <h3 class="text-xl font-semibold text-gray-100 mb-1">Aisyah Raissa Algebra</h3>
+                    </div>
+                    <div class="team-member-card">
+                        <img src="https://placehold.co/200x200/0A192F/64FFDA?text=JEK" alt="Foto Juan Enrique Kalangi">
+                        <h3 class="text-xl font-semibold text-gray-100 mb-1">Juan Enrique Kalangi</h3>
+                    </div>
+                    <div class="team-member-card">
+                        <img src="https://placehold.co/200x200/0A192F/64FFDA?text=SL" alt="Foto Steven Lievandy">
+                        <h3 class="text-xl font-semibold text-gray-100 mb-1">Steven Lievandy</h3>
+                    </div>
+                    <div class="team-member-card">
+                        <img src="https://placehold.co/200x200/0A192F/64FFDA?text=EMPH" alt="Foto Enjelika May Permatasari Hutajulu">
+                        <h3 class="text-xl font-semibold text-gray-100 mb-1">Enjelika May Permatasari Hutajulu</h3>
+                    </div>
+                </div>
+            </section>
+            <section class="text-center py-12">
+                <h2 class="text-2xl font-semibold text-gray-100 mb-4">Siap Bergabung dengan Kami?</h2>
+                <p class="text-gray-400 mb-8 max-w-xl mx-auto">Baik Anda seorang inovator dengan ide brilian atau investor yang mencari peluang berdampak, DANAIN adalah tempatnya.</p>
+                <div class="space-x-4">
+                    <a href="auth.html#signup" class="btn-primary px-8 py-3 rounded-md text-lg font-semibold">Daftar Sekarang</a>
+                    <a href="daftar-proyek.html" class="btn-secondary px-8 py-3 rounded-md text-lg font-semibold">Telusuri Proyek</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer-bg text-gray-400 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>© <span id="currentYearFooter"></span> DANAIN. Semua Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="js/tentang-kami.js"></script>
+</body>
+</html>

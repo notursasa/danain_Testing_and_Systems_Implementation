@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profil - DANAIN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/edit-profil.css">
+</head>
+<body class="antialiased">
+    <div id="successPopup" class="success-popup">Profil berhasil diperbarui!</div>
+
+    <header class="navbar-bg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-extrabold" style="color: #64FFDA;"> 
+                DANAIN
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="index.html#achievements" class="nav-link">Pencapaian</a>
+                <a href="index.html#how-it-works" class="nav-link">Cara Kerja</a>
+                <a href="daftar-proyek.html" class="nav-link">Telusuri Proyek</a>
+                <a href="index.html#faq" class="nav-link">FAQ</a>
+                <a href="tentang-kami.html" class="nav-link">Tentang Kami</a>
+                
+                <div id="navUserSectionDesktop" class="hidden items-center space-x-4"></div>
+                <div id="navAuthLinksDesktop" class="flex items-center space-x-4">
+                     <a href="auth.html#login" id="navLoginLinkDesktop" class="btn-secondary px-4 py-2 rounded-md text-sm">Masuk</a>
+                     <a href="auth.html#signup" id="navRegisterLinkDesktop" class="btn-primary px-4 py-2 rounded-md text-sm font-semibold">Daftar</a>
+                </div>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <i class="fas fa-bars text-2xl" style="color: #64FFDA;"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="md:hidden hidden bg-opacity-95 backdrop-blur-md" style="background-color: #0c1f3a;">
+            <a href="index.html#achievements" class="block px-6 py-3 nav-link hover:bg-gray-700">Pencapaian</a>
+            <a href="index.html#how-it-works" class="block px-6 py-3 nav-link hover:bg-gray-700">Cara Kerja</a>
+            <a href="daftar-proyek.html" class="block px-6 py-3 nav-link hover:bg-gray-700">Telusuri Proyek</a>
+            <a href="index.html#faq" class="block px-6 py-3 nav-link hover:bg-gray-700">FAQ</a>
+            <a href="tentang-kami.html" class="block px-6 py-3 nav-link hover:bg-gray-700">Tentang Kami</a>
+            
+            <div id="navUserSectionMobile" class="hidden border-t border-gray-700 pt-2"></div>
+            <div id="navAuthLinksMobile" class="border-t border-gray-700 pt-2">
+                <a href="auth.html#login" id="mobileNavLoginLink" class="block px-6 py-3 nav-link hover:bg-gray-700">Masuk</a>
+                <a href="auth.html#signup" id="mobileNavRegisterLink" class="block mx-4 my-2 px-6 py-3 btn-primary text-center rounded-md font-semibold">Daftar</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-16">
+        <div id="editProfileContent" class="opacity-0 transition-opacity duration-500 ease-in-out">
+            <div class="mb-8 md:mb-12">
+                 <a href="#" id="backToDashboardLink" class="inline-flex items-center text-sm text-blue-400 hover:text-blue-300 mb-4">
+                    <i class="fas fa-arrow-left mr-2"></i>Kembali ke Dashboard
+                </a>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-100">Edit Profil Anda</h1>
+                <p class="text-lg text-gray-400 mt-2 max-w-2xl">Perbarui informasi akun Anda di bawah ini.</p>
+            </div>
+
+            <form id="editProfileForm" class="max-w-xl mx-auto" novalidate>
+                <section class="form-section">
+                    <h2 class="text-xl font-semibold text-gray-100 mb-6 border-b border-gray-700 pb-3">Informasi Akun</h2>
+                    <div>
+                        <label for="profileFullName" class="form-label">Nama Lengkap <span class="text-red-500">*</span></label>
+                        <input type="text" id="profileFullName" name="profileFullName" class="form-input" required>
+                        <p class="error-message"></p>
+                    </div>
+                    <div class="mt-6">
+                        <label for="profileUsername" class="form-label">Username <span class="text-red-500">*</span></label>
+                        <input type="text" id="profileUsername" name="profileUsername" class="form-input" required>
+                        <p class="error-message"></p>
+                    </div>
+                     <div class="mt-6">
+                        <label for="profileEmail" class="form-label">Email</label>
+                        <input type="email" id="profileEmail" name="profileEmail" class="form-input" readonly>
+                        <p class="text-xs text-gray-500 mt-1">Email tidak dapat diubah.</p>
+                    </div>
+                    <div class="mt-6">
+                        <label for="profileRole" class="form-label">Peran Akun</label>
+                        <input type="text" id="profileRole" name="profileRole" class="form-input" readonly>
+                         <p class="text-xs text-gray-500 mt-1">Peran akun tidak dapat diubah.</p>
+                    </div>
+                </section>
+
+                <section class="form-section">
+                    <h2 class="text-xl font-semibold text-gray-100 mb-6 border-b border-gray-700 pb-3">Ubah Kata Sandi (Opsional)</h2>
+                    <div class="mt-6">
+                        <label for="profileCurrentPassword" class="form-label">Kata Sandi Saat Ini (Demo)</label>
+                        <input type="password" id="profileCurrentPassword" name="profileCurrentPassword" class="form-input" placeholder="Masukkan kata sandi saat ini">
+                        <p class="error-message"></p>
+                    </div>
+                    <div class="mt-6">
+                        <label for="profileNewPassword" class="form-label">Kata Sandi Baru</label>
+                        <input type="password" id="profileNewPassword" name="profileNewPassword" class="form-input" placeholder="Minimal 6 karakter">
+                        <p class="error-message"></p>
+                    </div>
+                    <div class="mt-6">
+                        <label for="profileConfirmPassword" class="form-label">Konfirmasi Kata Sandi Baru</label>
+                        <input type="password" id="profileConfirmPassword" name="profileConfirmPassword" class="form-input" placeholder="Ulangi kata sandi baru">
+                        <p class="error-message"></p>
+                    </div>
+                     <p class="text-xs text-gray-500 mt-4">Kosongkan field kata sandi jika Anda tidak ingin mengubahnya.</p>
+                </section>
+
+                <div class="mt-10 flex justify-end gap-4">
+                    <a href="#" id="cancelEditButton" class="btn-secondary px-8 py-3 rounded-md font-semibold">Batal</a>
+                    <button type="submit" class="btn-primary px-8 py-3 rounded-md font-semibold">Simpan Perubahan</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer-bg text-gray-400 py-12 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p>© <span id="currentYearFooter"></span> DANAIN. Semua Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="js/edit-profil.js"></script>
+</body>
+</html>
